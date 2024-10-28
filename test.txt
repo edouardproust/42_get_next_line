@@ -1,0 +1,7 @@
+Hello, world!
+This is a test file.
+It contains multiple lines.
+Some lines are short.
+Some lines are a bit longer than others to test edge cases.
+This line is particularly long and should test the handling of larger lines in the get_next_line function.
+The end of this file is reached here.
