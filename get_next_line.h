@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:45:12 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/26 19:49:59 by eproust          ###   ########.fr       */
+/*   Updated: 2024/10/29 16:49:48 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@
 
 char	*get_next_line(int fd);
 
-// Utils
 size_t	ft_strlen(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 char    *ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strchr(char *s, int c);
-//char	*ft_strdup(char *s);:
+void	*free_strings(char **s1, char **s2);
 
 #endif
