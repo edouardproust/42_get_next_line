@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:46:18 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/27 13:24:34 by eproust          ###   ########.fr       */
+/*   Updated: 2024/10/29 16:56:41 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		i = 0;
 	int		j = 0;
 
-	if (!s1 || !s2)
-		return (NULL);
+	if (!s1)
+		return (ft_substr(s2, 0, ft_strlen(s2)));
 	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!join)
 		return (NULL);
@@ -92,4 +92,19 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	}
 	substr[i] = '\0';
 	return (substr);
+}
+
+void	*free_strings(char **s1, char **s2)
+{
+	if (*s1)
+	{
+		free(*s1);
+		*s1 = NULL;
+	}
+	if (*s2)
+	{
+		free(*s2);
+		*s2 = NULL;
+	}
+	return (NULL);
 }
