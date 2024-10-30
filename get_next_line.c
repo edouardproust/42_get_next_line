@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 19:15:14 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/29 17:03:11 by eproust          ###   ########.fr       */
+/*   Updated: 2024/10/30 18:43:00 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 char	*fill_stash(char *stash, int fd)
 {
-	char	*buffer;
+	char	buffer[BUFFER_SIZE + 1];
 	int		br;
 
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	buffer[0] = '\0';
-	br = 1;
-	while (br > 0 && (!ft_strchr(buffer, '\n'))) // check stash to prevent always read
+	if (!stash)
+	{
+		stash = malloc(sizeof(char));
+		if (!stash)
+			return (NULL);
+		stash[0] = '\0';
+	};
+	while (!ft_strchr(stash, '\n'))
 	{
 		br = read(fd, buffer, BUFFER_SIZE);
-		if (br < 0)
-			return (free_strings(&stash, &buffer));
+		buffer[br] = '\0';
+		if (br <= 0)
+			return (free_ptr(&stash));
 		if (br > 0)
 		{
 			stash = ft_strjoin(stash, buffer);
 			if (!stash)
-				return (free_strings(&stash, &buffer));	
+				return (free_ptr(&stash));	
 		}
 	}
-	free(buffer);
 	return (stash);
 }
 
@@ -48,7 +52,7 @@ char	*set_line(char *stash)
 		i--;
 	line = ft_substr(stash, 0, i + 1);
 	if (!line)
-		return (free_strings(&stash, NULL));
+		return (free_ptr(&stash));
 	return (line);
 }
 
@@ -59,12 +63,9 @@ char	*update_stash(int line_len, char *stash)
 
 	len = ft_strlen(stash);
 	if (len == line_len)
-	{
-		free(stash);
-		return (NULL);
-	}
+		return (free_ptr(&stash));
 	tmp = ft_substr(stash, line_len, len);
-	free(stash);
+	free_ptr(&stash);
 	return (tmp);
 }
 
@@ -80,9 +81,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = set_line(stash);
 	if (!line)
-		return (NULL);
+		return (free_ptr(&stash));
 	stash = update_stash(ft_strlen(line), stash);
-	if (!stash)
-		return (NULL);
 	return (line);
 }

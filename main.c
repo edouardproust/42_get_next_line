@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:00:35 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/29 15:17:00 by eproust          ###   ########.fr       */
+/*   Updated: 2024/10/30 18:30:14 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void)
 {
 	int		fd;
-	char	*next_line;
+	char	*line;
 	int		i;
 
 	fd = open("_test/test_lorem.txt", O_RDONLY);
@@ -24,12 +24,12 @@ int	main(void)
 	if (fd < 0)
 		return (1);
 	i = 1;
-	next_line = get_next_line(fd);
-	while (next_line)
+	line = get_next_line(fd);
+	while (line)
 	{
-		printf("%d:%s", i, next_line);
-		free(next_line);
-		next_line = get_next_line(fd);
+		printf("%d:%s", i, line);
+		free(line);
+		line = get_next_line(fd);
 		i++;
 	}
 	close(fd);
