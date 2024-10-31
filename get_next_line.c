@@ -6,15 +6,15 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 19:15:14 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/30 18:43:00 by eproust          ###   ########.fr       */
+/*   Updated: 2024/10/31 16:30:42 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*fill_stash(char *stash, int fd)
+char	*fill_stash(char *stash, ssize_t fd)
 {
-	char	buffer[BUFFER_SIZE + 1];
+	char	*buffer;
 	int		br;
 
 	if (!stash)
@@ -23,20 +23,31 @@ char	*fill_stash(char *stash, int fd)
 		if (!stash)
 			return (NULL);
 		stash[0] = '\0';
-	};
+	}
+	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buffer[0] = '\0';
 	while (!ft_strchr(stash, '\n'))
 	{
 		br = read(fd, buffer, BUFFER_SIZE);
 		buffer[br] = '\0';
-		if (br <= 0)
+		if (br < 0)
+		{
+			free_ptr(&buffer);
 			return (free_ptr(&stash));
+		}
+		if (br == 0)
+			break;
 		if (br > 0)
 		{
 			stash = ft_strjoin(stash, buffer);
 			if (!stash)
+			{
+				free_ptr(&buffer);
 				return (free_ptr(&stash));	
+			}
 		}
 	}
+	free(buffer);
 	return (stash);
 }
 
@@ -69,7 +80,7 @@ char	*update_stash(int line_len, char *stash)
 	return (tmp);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(ssize_t fd)
 {
 	static char	*stash;
 	char		*line;
@@ -80,8 +91,11 @@ char	*get_next_line(int fd)
 	if (!stash)
 		return (NULL);
 	line = set_line(stash);
-	if (!line)
+	if (!line[0])
+	{
+		free_ptr(&line);
 		return (free_ptr(&stash));
+	}
 	stash = update_stash(ft_strlen(line), stash);
 	return (line);
 }

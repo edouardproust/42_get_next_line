@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:45:12 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/30 18:19:43 by eproust          ###   ########.fr       */
+/*   Updated: 2024/10/31 15:45:56 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdio.h> // TODO Remove this line!!
 # include <fcntl.h> // TODO Remove this line!!
 
-char	*get_next_line(int fd);
+char	*get_next_line(ssize_t fd);
 
 size_t	ft_strlen(char *s);
 char	*ft_strjoin(char *s1, char *s2);
