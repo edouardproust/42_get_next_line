@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:46:18 by eproust           #+#    #+#             */
-/*   Updated: 2024/10/30 18:17:23 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/04 21:00:29 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,21 @@ size_t	ft_strlen(char *s)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*join;
-	int		i = 0;
-	int		j = 0;
+	int		i;
+	int		j;
 
-	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!s1)
+		return (ft_substr(s2, 0, ft_strlen(s2)));
+	join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!join)
 		return (NULL);
+	i = 0;
 	while (s1[i])
 	{
 		join[i] = s1[i];
 		i++;
 	}
+	j = 0;
 	while (s2[j])
 		join[i++] = s2[j++];
 	join[i] = '\0';
@@ -92,12 +96,17 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	return (substr);
 }
 
-void	*free_ptr(char **ptr)
+void	*free_ptrs(char **p1, char **p2)
 {
-	if (ptr && *ptr)
+	if (p1 && *p1)
 	{
-		free(*ptr);
-		*ptr = NULL;
+		free(*p1);
+		*p1 = NULL;
+	}
+	if (p2 && *p2)
+	{
+		free(*p2);
+		*p2 = NULL;
 	}
 	return (NULL);
 }
