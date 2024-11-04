@@ -6,11 +6,14 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:00:35 by eproust           #+#    #+#             */
-/*   Updated: 2024/11/04 20:43:54 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/04 21:36:14 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+#include "stdio.h"
+#include <fcntl.h>
 
 int	main(void)
 {
@@ -18,7 +21,7 @@ int	main(void)
 	char	*line;
 	int		i;
 
-	fd = open("gnlTester/files/nl", O_RDONLY);
+	fd = open("test/hello_world", O_RDONLY);
 	if (fd < 0)
 	{
 		printf("Error opening the file.");
