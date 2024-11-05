@@ -10,7 +10,7 @@ Subject: [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [S
 
 ## Result
 
-### Output && valgrind verification
+### Output & valgrind verification
 ![42 get_next_line leaks test valgrind](https://github.com/user-attachments/assets/14b485f8-3ca3-43a6-ad43-e9ecd4bf902c)
 
 ### Moulinette test
