@@ -20,5 +20,5 @@ Tool used: [Francinette](https://github.com/xicodomingues/francinette)
 ## How to use
 
 1. Clone repo
-2. Rename "..gitignore" into ".gitignore"
+2. Rename `..gitignore` into `.gitignore`
 3. Push to you own repo (only the files requested by the subject will be pushed to the repo)
