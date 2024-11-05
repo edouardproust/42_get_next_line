@@ -20,9 +20,11 @@ Subject: [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [S
 ```bash
 cd test
 make test
-valgrind --leak-check=full ./gnl
 ```
 ![42 get_next_line make output](https://github.com/user-attachments/assets/0897266a-9390-4e7f-a377-a79399602392)
+```bash
+valgrind --leak-check=full ./gnl
+```
 ![42 get_next_line leaks test valgrind](https://github.com/user-attachments/assets/5c926eca-ff3f-4f0e-b764-d8a1ce38a0fa)
 
 ### Moulinette test
