@@ -23,7 +23,7 @@ This way, only the files requested by the subject will be pushed to your repo.
 cd test
 make test
 ```
-![42 get_next_line make output](https://github.com/user-attachments/assets/0897266a-9390-4e7f-a377-a79399602392)
+![42 get_next_line make output](./test/screenshot/output.png)
 
 ### Memory leaks check
 Tool used: [Valgrind](https://valgrind.org/)
@@ -34,11 +34,11 @@ sudo apt install valgrind
 ```bash
 valgrind --leak-check=full ./gnl
 ```
-![42 get_next_line leaks test valgrind](https://github.com/user-attachments/assets/5c926eca-ff3f-4f0e-b764-d8a1ce38a0fa)
+![42 get_next_line leaks test valgrind](./test/screenshot/valgrind.png)
 
 ### Moulinette test
 Tool used: [Francinette](https://github.com/xicodomingues/francinette)
 ```bash
 paco
 ```
-![42 get_next_line francinette test](https://github.com/user-attachments/assets/a0819972-1505-47db-9c18-b3bffbd2aa1d)
+![42 get_next_line francinette test](./test/screenshot/paco.png)
