@@ -12,7 +12,9 @@ Subject: [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [S
 
 1. Clone repo
 2. Rename `..gitignore` into `.gitignore`
-3. Push to you own repo (only the files requested by the subject will be pushed to the repo)
+3. Push to you own repo
+
+=> Only the files requested by the subject will be pushed to the repo.
 
 ## Run tests
 
