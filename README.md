@@ -1,7 +1,5 @@
 # 42 school / get_next_line
 
-## Description
-
 - **Location:** 42 School Barcelona
 - **Validation:** November 2024
 - **Subject:** [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [SPANISH](./docs/es.subject.pdf)
