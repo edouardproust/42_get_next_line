@@ -24,6 +24,11 @@ make test
 ![42 get_next_line make output](https://github.com/user-attachments/assets/0897266a-9390-4e7f-a377-a79399602392)
 
 ### Memory leaks check
+Tool used: [Valgrind](https://valgrind.org/)
+```bash
+sudo apt update
+sudo apt install valgrind
+```
 ```bash
 valgrind --leak-check=full ./gnl
 ```
