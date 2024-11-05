@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:46:18 by eproust           #+#    #+#             */
-/*   Updated: 2024/11/04 21:00:29 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/05 18:04:40 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[j])
 		join[i++] = s2[j++];
 	join[i] = '\0';
-	free(s1);
+	free_ptrs(&s1, NULL);
 	return (join);
 }
 
