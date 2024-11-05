@@ -1,4 +1,4 @@
-# get_next_line (42 school)
+# get_next_line (42 school project)
 
 The "get_next_line" project at 42 School requires implementing a function that reads a single line from a file descriptor. It must manage multiple calls, handle dynamic memory allocation, and support files of any length. The project tests skills in file handling, memory management, and edge case considerations.
 
