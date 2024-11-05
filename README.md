@@ -26,7 +26,7 @@ make test
 
 ## Run tests
 
-### Memory leaks check
+### Memory leaks
 - Install [valgrind](https://valgrind.org/): `sudo apt update && sudo apt install valgrind`
 - Run test: `cd test && valgrind --leak-check=full ./gnl`
 
