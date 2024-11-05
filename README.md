@@ -22,9 +22,9 @@ cd test
 make test
 ```
 
-## Run tests
-
 ![42 get_next_line make output](./test/screenshot/output.png)
+
+## Run tests
 
 ### Memory leaks check
 - Install [valgrind](https://valgrind.org/): `sudo apt update && sudo apt install valgrind`
