@@ -16,13 +16,13 @@ Subject: [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [S
 
 This way, only the files requested by the subject will be pushed to your repo.
 
-## Run tests
-
 ### Output
 ```bash
 cd test
 make test
 ```
+
+## Run tests
 
 ![42 get_next_line make output](./test/screenshot/output.png)
 
