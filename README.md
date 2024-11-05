@@ -1,4 +1,4 @@
-# 42 school / get_next_line
+clear# 42 school / get_next_line
 
 ## Description
 - Location: 42 School Barcelona
@@ -22,8 +22,12 @@ cd test
 make test
 valgrind --leak-check=full ./gnl
 ```
-![42 get_next_line leaks test valgrind](https://github.com/user-attachments/assets/98c5af8f-7a2c-400e-906e-f5e814538521)
+![42 get_next_line make output](https://github.com/user-attachments/assets/0897266a-9390-4e7f-a377-a79399602392)
+![42 get_next_line leaks test valgrind](https://github.com/user-attachments/assets/5c926eca-ff3f-4f0e-b764-d8a1ce38a0fa)
 
 ### Moulinette test
 Tool used: [Francinette](https://github.com/xicodomingues/francinette)
+```bash
+paco
+```
 ![42 get_next_line francinette test](https://github.com/user-attachments/assets/a0819972-1505-47db-9c18-b3bffbd2aa1d)
