@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:00:35 by eproust           #+#    #+#             */
-/*   Updated: 2024/11/05 13:52:53 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/05 14:09:36 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	char	*line;
 	int		i;
 
-	fd = open("test/hello_world", O_RDONLY);
+	fd = open("txt/hello_world", O_RDONLY);
 	if (fd < 0)
 	{
 		printf("Error opening the file.");
