@@ -10,7 +10,7 @@ Subject: [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [S
 
 ## How to use
 
-1. Clone repo
+1. Clone repo locally
 2. Rename `..gitignore` into `.gitignore`
 3. Push to you own repo
 
