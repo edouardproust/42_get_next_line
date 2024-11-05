@@ -23,14 +23,17 @@ This way, only the files requested by the subject will be pushed to your repo.
 cd test
 make test
 ```
+
 ![42 get_next_line make output](./test/screenshot/output.png)
 
 ### Memory leaks check
 - Install [valgrind](https://valgrind.org/): `sudo apt update && sudo apt install valgrind`
 - Run test: `cd test && valgrind --leak-check=full ./gnl`
+
 ![42 get_next_line leaks test valgrind](./test/screenshot/valgrind.png)
 
 ### Moulinette test
 - Install [paco](https://github.com/xicodomingues/francinette) `bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"`
 - Run test inside the project folder: `paco`
+
 ![42 get_next_line francinette test](./test/screenshot/paco.png)
