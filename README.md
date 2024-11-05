@@ -16,12 +16,14 @@ Subject: [ENGLISH](./docs/en.subject.pdf) / [FRENCH](./docs/fr.subject.pdf) / [S
 
 ## Run tests
 
-### Output & Valgrind verification
+### Output
 ```bash
 cd test
 make test
 ```
 ![42 get_next_line make output](https://github.com/user-attachments/assets/0897266a-9390-4e7f-a377-a79399602392)
+
+### Memory leaks check
 ```bash
 valgrind --leak-check=full ./gnl
 ```
