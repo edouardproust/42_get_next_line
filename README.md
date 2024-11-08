@@ -2,7 +2,7 @@
 
 The "get_next_line" project at 42 School requires implementing a function that reads a single line from a file descriptor. It must manage multiple calls, handle dynamic memory allocation, and support files of any length. The project tests skills in file handling, memory management, and edge case considerations.
 
-- **Subject:** [English](./docs/en.subject.pdf) / [French](./docs/fr.subject.pdf) / [Spanish](./docs/es.subject.pdf)
+- **Subject:** [English](./subject/en.subject.pdf) / [French](./subject/fr.subject.pdf) / [Spanish](./subject/es.subject.pdf)
 - **Location:** 42 School Barcelona
 - **Validation:** November 2024
 
