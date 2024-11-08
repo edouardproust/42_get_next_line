@@ -6,7 +6,7 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 17:00:35 by eproust           #+#    #+#             */
-/*   Updated: 2024/11/05 18:27:01 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/07 14:45:55 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 		if (!line)
 			break ;
 		printf("%d:%s", i, line);
-		free(line);
+		free_ptrs(&line, NULL);
 		i++;
 	}
 	close(fd);

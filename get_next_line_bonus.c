@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 19:15:14 by eproust           #+#    #+#             */
-/*   Updated: 2024/11/08 17:52:26 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/08 19:40:21 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*fill_stash(char **stash, int fd);
-static char	*set_line(char **stash);
-static char	*update_stash(int line_len, char **stash);
+char	*fill_stash(char **stash, int fd);
+char	*set_line(char **stash);
+char	*update_stash(int line_len, char **stash);
 
 char	*get_next_line(int fd)
 {
-	static char	*stash;
+	static char	*stash[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stash = fill_stash(&stash, fd);
-	if (!stash)
+	stash[fd] = fill_stash(&stash[fd], fd);
+	if (!stash[fd])
 		return (NULL);
-	line = set_line(&stash);
+	line = set_line(&stash[fd]);
 	if (!line)
 		return (NULL);
-	stash = update_stash(ft_strlen(line), &stash);
+	stash[fd] = update_stash(ft_strlen(line), &stash[fd]);
 	return (line);
 }
 
-static char	*fill_stash(char **stash, int fd)
+char	*fill_stash(char **stash, int fd)
 {
 	char	*buffer;
 	int		br;
@@ -60,7 +60,7 @@ static char	*fill_stash(char **stash, int fd)
 	return (*stash);
 }
 
-static char	*set_line(char **stash)
+char	*set_line(char **stash)
 {
 	char	*line;
 	int		i;
@@ -78,7 +78,7 @@ static char	*set_line(char **stash)
 	return (line);
 }
 
-static char	*update_stash(int line_len, char **stash)
+char	*update_stash(int line_len, char **stash)
 {
 	int		len;
 	char	*tmp;
