@@ -6,11 +6,11 @@
 /*   By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 19:15:14 by eproust           #+#    #+#             */
-/*   Updated: 2024/11/08 19:40:21 by eproust          ###   ########.fr       */
+/*   Updated: 2024/11/11 17:23:53 by eproust          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*fill_stash(char **stash, int fd);
 char	*set_line(char **stash);
@@ -40,7 +40,7 @@ char	*fill_stash(char **stash, int fd)
 
 	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buffer)
-		return (free(*stash), NULL);
+		return (free_ptrs(stash, NULL));
 	buffer[0] = '\0';
 	br = 1;
 	while (!ft_strchr(buffer, '\n') && br != 0)

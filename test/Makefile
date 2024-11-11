@@ -6,7 +6,7 @@
 #    By: eproust <contact@edouardproust.dev>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:15:52 by eproust           #+#    #+#              #
-#    Updated: 2024/11/05 14:28:11 by eproust          ###   ########.fr        #
+#    Updated: 2024/11/11 17:23:11 by eproust          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,17 +43,21 @@ $(NAME):	$(OBJS)
 all:		$(NAME)
 
 clean:
-	@ echo "\n$(RED)Delete .o files:$(END)"
+	@echo "\n$(RED)Delete .o files:$(END)"
 	rm -f $(C_DIR)*.o $(TEST_DIR)*.o
 
 fclean:		clean
-	@ echo "\n$(RED)Delete binary file:$(END)"
+	@echo "\n$(RED)Delete binary file:$(END)"
 	rm -f $(NAME)
 
 re:			fclean all
 
 test:		re
-	@ echo "\n$(BLUE)Run '$(NAME)':$(END)"
+	@echo "\n$(BLUE)Run '$(NAME)':$(END)"
 	@./$(NAME)
+
+leaks:		re
+	@echo "\n$(BLUE)Run '$(NAME)' + check leaks:$(END)"
+	@valgrind  --leak-check=full ./$(NAME)
 
 .PHONY:		all clean fclean re
